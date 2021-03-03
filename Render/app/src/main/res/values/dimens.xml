@@ -3,7 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="large_text_size">30dp</dimen>
+    <dimen name="large_text_size">30sp</dimen>
 
     <dimen name="narrow_space">6dp</dimen>
     <dimen name="wide_space">16dp</dimen>

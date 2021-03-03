@@ -16,6 +16,9 @@
 
 package com.example.android.mobileperf.render;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.DrawableRes;
+
 /**
  * Class for Droid objects. Each Droid has a name and is associated with a color and
  * (optionally) an image.  Droid images generated via http://androidify.com.
@@ -24,31 +27,33 @@ public class Droid {
     /**
      * The Droid's name.
      */
-    private String name;
+    private final String name;
 
     /**
      * The color associated with a droid.
      */
-    private int color;
+    @ColorInt private final int color;
 
     /**
      *  The id of a drawable associated with a Droid.
      */
-    private int imageId;
+    @DrawableRes private int imageId;
 
 
-    public Droid(String name, int color) {
+    public Droid(String name, @ColorInt int color) {
         this.name = name;
         this.color = color;
     }
 
-    public Droid(String name, int color, int imageId) {
+    public Droid(String name, @ColorInt int color, @DrawableRes int imageId) {
         this.name = name;
         this.color = color;
         this.imageId = imageId;
     }
 
     public String getName() {return name;}
+    @ColorInt
     public int getColor() {return color;}
+    @DrawableRes
     public int getAvatarId() {return imageId;}
 }

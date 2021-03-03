@@ -18,35 +18,36 @@ package com.example.android.mobileperf.render;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.android.mobileperf.render.databinding.ActivityMainBinding;
 
 /**
  * The main activity for the part of the course dealing with rendering performance. Works
  * simply as a table of contents: surfaces buttons that launch the ChatumLatinum and DroidCards
  * activities.
  */
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
+
+    private ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ViewGroup activityContainer = (ViewGroup) findViewById(R.id.activity_main_container);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        addButton(ChatumLatinumActivity.class,
-                getString(R.string.title_activity_chatum_latinum), activityContainer);
+        addButton(getString(R.string.title_activity_chatum_latinum), binding.activityMainContainer);
     }
 
-    private void addButton(final Class destination, String description, ViewGroup parent) {
+    private void addButton(String description, ViewGroup parent) {
         Button button = new Button(this);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent problemIntent = new Intent(MainActivity.this, destination);
-                startActivity(problemIntent);
-            }
+        button.setOnClickListener(v -> {
+            Intent problemIntent = new Intent(MainActivity.this, ChatumLatinumActivity.class);
+            startActivity(problemIntent);
         });
         button.setText(description);
         parent.addView(button);

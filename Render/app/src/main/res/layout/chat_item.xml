@@ -15,34 +15,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#78A"
-            android:background="@android:color/white"
             android:orientation="horizontal">
 
-            <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:padding="@dimen/narrow_space"
                 android:gravity="bottom"
                 android:id="@+id/chat_author_name" />
 
-            <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:textStyle="italic"
                 android:padding="@dimen/narrow_space"
                 android:id="@+id/chat_datetime" />
         </RelativeLayout>
 
-        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="@dimen/narrow_space"

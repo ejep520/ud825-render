@@ -74,8 +74,12 @@ public class ChatAdapter extends ArrayAdapter<Chat> {
         // Display the chat author's avatar (a droid image) and a background color associated with
         // the author.
         if (chat.getAuthor().getAvatarId() != 0) {
-            Picasso.with(getContext()).load(chat.getAuthor().getAvatarId()).into(
+            Picasso.get().load(chat.getAuthor().getAvatarId()).into(
                     chat_author_avatar);
+            chat_author_avatar.setBackgroundColor(Color.TRANSPARENT);
+        } else {
+            Picasso.get().load(android.R.color.transparent).into(chat_author_avatar);
+            chat_author_avatar.setBackgroundColor(chat.getAuthor().getColor());
         }
         chat_author_avatar.setBackgroundColor(chat.getAuthor().getColor());
 

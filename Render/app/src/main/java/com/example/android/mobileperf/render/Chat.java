@@ -25,17 +25,17 @@ public class Chat {
     /**
      * The author of the chat.
      */
-    private Droid author;
+    private final Droid author;
 
     /**
      * The chat content. This is hardcoded in this sample (see ChatsFragment.java).
      */
-    private String text;
+    private final String text;
 
     /**
      * The time a chat was posted to the chat board.
      */
-    private Date datetime;
+    private final Date datetime;
 
     public Chat(Droid author, String text, Date datetime) {
         this.author = author;
